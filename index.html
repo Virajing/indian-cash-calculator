@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Cash Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        .denomination {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .denomination label {
+            flex: 1;
+        }
+        .denomination input {
+            flex: 1;
+        }
+        .total {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        h1{
+            background-color: cyan;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Indian Cash Calculator</h1>
+        <div class="denomination">
+            <label for="notes500">₹500 Notes:</label>
+            <input type="number" id="notes500" value="0">
+        </div>
+        <div class="denomination">
+            <label for="notes200">₹200 Notes:</label>
+            <input type="number" id="notes200" value="0">
+        </div>
+        <div class="denomination">
+            <label for="notes100">₹100 Notes:</label>
+            <input type="number" id="notes100" value="0">
+        </div>
+        <div class="denomination">
+            <label for="notes50">₹50 Notes:</label>
+            <input type="number" id="notes50" value="0">
+        </div>
+        <div class="denomination">
+            <label for="notes20">₹20 Notes:</label>
+            <input type="number" id="notes20" value="0">
+        </div>
+        <div class="denomination">
+            <label for="notes10">₹10 Notes:</label>
+            <input type="number" id="notes10" value="0">
+        </div>
+        <div class="denomination">
+            <label for="coins10">₹10 Coins:</label>
+            <input type="number" id="coins10" value="0">
+        </div>
+        <div class="denomination">
+            <label for="coins5">₹5 Coins:</label>
+            <input type="number" id="coins5" value="0">
+        </div>
+        <div class="denomination">
+            <label for="coins2">₹2 Coins:</label>
+            <input type="number" id="coins2" value="0">
+        </div>
+        <div class="denomination">
+            <label for="coins1">₹1 Coins:</label>
+            <input type="number" id="coins1" value="0">
+        </div>
+        <button onclick="calculateTotal()">Calculate Total</button>
+        <div class="total" id="totalAmount">Total Amount: ₹0</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
