@@ -35,105 +35,118 @@
 </head>
 <body>
     <div class="container">
-        <h1>Viraj Cash Calculator</h1>
-        <div class="denomination">
-            <label for="notes2000">₹2000 Notes:</label>
-            <input type="number" id="notes2000" value="0">
-            <span class="sub-total" id="total2000">₹0</span>
-        </div>
+        <h1>Indian Cash Calculator</h1>
         <div class="denomination">
             <label for="notes500">₹500 Notes:</label>
-            <input type="number" id="notes500" value="0">
+            <input type="number" id="notes500" value="">
             <span class="sub-total" id="total500">₹0</span>
         </div>
         <div class="denomination">
             <label for="notes200">₹200 Notes:</label>
-            <input type="number" id="notes200" value="0">
+            <input type="number" id="notes200" value="">
             <span class="sub-total" id="total200">₹0</span>
         </div>
         <div class="denomination">
             <label for="notes100">₹100 Notes:</label>
-            <input type="number" id="notes100" value="0">
+            <input type="number" id="notes100" value="">
             <span class="sub-total" id="total100">₹0</span>
         </div>
         <div class="denomination">
             <label for="notes50">₹50 Notes:</label>
-            <input type="number" id="notes50" value="0">
+            <input type="number" id="notes50" value="">
             <span class="sub-total" id="total50">₹0</span>
         </div>
         <div class="denomination">
             <label for="notes20">₹20 Notes:</label>
-            <input type="number" id="notes20" value="0">
+            <input type="number" id="notes20" value="">
             <span class="sub-total" id="total20">₹0</span>
         </div>
         <div class="denomination">
             <label for="notes10">₹10 Notes:</label>
-            <input type="number" id="notes10" value="0">
+            <input type="number" id="notes10" value="">
             <span class="sub-total" id="total10">₹0</span>
         </div>
         <div class="denomination">
             <label for="coins10">₹10 Coins:</label>
-            <input type="number" id="coins10" value="0">
+            <input type="number" id="coins10" value="">
             <span class="sub-total" id="totalCoins10">₹0</span>
         </div>
         <div class="denomination">
             <label for="coins5">₹5 Coins:</label>
-            <input type="number" id="coins5" value="0">
+            <input type="number" id="coins5" value="">
             <span class="sub-total" id="totalCoins5">₹0</span>
         </div>
         <div class="denomination">
             <label for="coins2">₹2 Coins:</label>
-            <input type="number" id="coins2" value="0">
+            <input type="number" id="coins2" value="">
             <span class="sub-total" id="totalCoins2">₹0</span>
         </div>
         <div class="denomination">
             <label for="coins1">₹1 Coins:</label>
-            <input type="number" id="coins1" value="0">
+            <input type="number" id="coins1" value="">
             <span class="sub-total" id="totalCoins1">₹0</span>
         </div>
         <div class="total" id="totalAmount">Total Amount: ₹0</div>
+        <div class="total" id="totalNotes">Total Notes: 0</div>
     </div>
 
     <script>
-        function updateSubTotal(denomination, multiplier, subTotalId) {
-    const count = parseInt(document.getElementById(denomination).value) || 0;
-    const subTotal = count * multiplier;
-    document.getElementById(subTotalId).innerText = `₹${subTotal}`;
-    calculateTotal();
-}
-
-function calculateTotal() {
-    const notes2000 = parseInt(document.getElementById('notes2000').value) || 0;
-    const notes500 = parseInt(document.getElementById('notes500').value) || 0;
-    const notes200 = parseInt(document.getElementById('notes200').value) || 0;
-    const notes100 = parseInt(document.getElementById('notes100').value) || 0;
-    const notes50 = parseInt(document.getElementById('notes50').value) || 0;
-    const notes20 = parseInt(document.getElementById('notes20').value) || 0;
-    const notes10 = parseInt(document.getElementById('notes10').value) || 0;
-    const coins10 = parseInt(document.getElementById('coins10').value) || 0;
-    const coins5 = parseInt(document.getElementById('coins5').value) || 0;
-    const coins2 = parseInt(document.getElementById('coins2').value) || 0;
-    const coins1 = parseInt(document.getElementById('coins1').value) || 0;
-
-    const totalAmount = (notes2000 * 2000) + (notes500 * 500) + (notes200 * 200) +
-                        (notes100 * 100) + (notes50 * 50) + (notes20 * 20) +
-                        (notes10 * 10) + (coins10 * 10) + (coins5 * 5) +
-                        (coins2 * 2) + (coins1 * 1);
-
-    document.getElementById('totalAmount').innerText = `Total Amount: ₹${totalAmount}`;
-}
-
-document.getElementById('notes2000').addEventListener('input', () => updateSubTotal('notes2000', 2000, 'total2000'));
-document.getElementById('notes500').addEventListener('input', () => updateSubTotal('notes500', 500, 'total500'));
-document.getElementById('notes200').addEventListener('input', () => updateSubTotal('notes200', 200, 'total200'));
-document.getElementById('notes100').addEventListener('input', () => updateSubTotal('notes100', 100, 'total100'));
-document.getElementById('notes50').addEventListener('input', () => updateSubTotal('notes50', 50, 'total50'));
-document.getElementById('notes20').addEventListener('input', () => updateSubTotal('notes20', 20, 'total20'));
-document.getElementById('notes10').addEventListener('input', () => updateSubTotal('notes10', 10, 'total10'));
-document.getElementById('coins10').addEventListener('input', () => updateSubTotal('coins10', 10, 'totalCoins10'));
-document.getElementById('coins5').addEventListener('input', () => updateSubTotal('coins5', 5, 'totalCoins5'));
-document.getElementById('coins2').addEventListener('input', () => updateSubTotal('coins2', 2, 'totalCoins2'));
-document.getElementById('coins1').addEventListener('input', () => updateSubTotal('coins1', 1, 'totalCoins1'));
+    function updateSubTotal(denomination, multiplier, subTotalId) {
+        const count = parseInt(document.getElementById(denomination).value) || 0;
+        const subTotal = count * multiplier;
+        document.getElementById(subTotalId).innerText = `₹${subTotal}`;
+        calculateTotal();
+    }
+    
+    function calculateTotal() {
+        const notes500 = parseInt(document.getElementById('notes500').value) || 0;
+        const notes200 = parseInt(document.getElementById('notes200').value) || 0;
+        const notes100 = parseInt(document.getElementById('notes100').value) || 0;
+        const notes50 = parseInt(document.getElementById('notes50').value) || 0;
+        const notes20 = parseInt(document.getElementById('notes20').value) || 0;
+        const notes10 = parseInt(document.getElementById('notes10').value) || 0;
+        const coins10 = parseInt(document.getElementById('coins10').value) || 0;
+        const coins5 = parseInt(document.getElementById('coins5').value) || 0;
+        const coins2 = parseInt(document.getElementById('coins2').value) || 0;
+        const coins1 = parseInt(document.getElementById('coins1').value) || 0;
+    
+        const totalAmount = (notes500 * 500) + (notes200 * 200) +
+                            (notes100 * 100) + (notes50 * 50) + (notes20 * 20) +
+                            (notes10 * 10) + (coins10 * 10) + (coins5 * 5) +
+                            (coins2 * 2) + (coins1 * 1);
+        const totalNotes = notes500 + notes200 + notes100 + notes50 + notes20 + notes10 + coins10 + coins5 + coins2 + coins1;
+    
+        document.getElementById('totalAmount').innerText = `Total Amount: ₹${totalAmount}`;
+        document.getElementById('totalNotes').innerText = `Total Notes: ${totalNotes}`;
+    }
+    
+    document.getElementById('notes500').addEventListener('input', () => updateSubTotal('notes500', 500, 'total500'));
+    document.getElementById('notes200').addEventListener('input', () => updateSubTotal('notes200', 200, 'total200'));
+    document.getElementById('notes100').addEventListener('input', () => updateSubTotal('notes100', 100, 'total100'));
+    document.getElementById('notes50').addEventListener('input', () => updateSubTotal('notes50', 50, 'total50'));
+    document.getElementById('notes20').addEventListener('input', () => updateSubTotal('notes20', 20, 'total20'));
+    document.getElementById('notes10').addEventListener('input', () => updateSubTotal('notes10', 10, 'total10'));
+    document.getElementById('coins10').addEventListener('input', () => updateSubTotal('coins10', 10, 'totalCoins10'));
+    document.getElementById('coins5').addEventListener('input', () => updateSubTotal('coins5', 5, 'totalCoins5'));
+    document.getElementById('coins2').addEventListener('input', () => updateSubTotal('coins2', 2, 'totalCoins2'));
+    document.getElementById('coins1').addEventListener('input', () => updateSubTotal('coins1', 1, 'totalCoins1'));
+    
+    function calculateTotalNotes(){
+        const notes500 = parseInt(document.getElementById('notes500').value) || 0;
+        const notes200 = parseInt(document.getElementById('notes200').value) || 0;
+        const notes100 = parseInt(document.getElementById('notes100').value) || 0;
+        const notes50 = parseInt(document.getElementById('notes50').value) || 0;
+        const notes20 = parseInt(document.getElementById('notes20').value) || 0;
+        const notes10 = parseInt(document.getElementById('notes10').value) || 0;
+        const coins10 = parseInt(document.getElementById('coins10').value) || 0;
+        const coins5 = parseInt(document.getElementById('coins5').value) || 0;
+        const coins2 = parseInt(document.getElementById('coins2').value) || 0;
+        const coins1 = parseInt(document.getElementById('coins1').value) || 0;
+    
+        const totalNotes = notes500 + notes200 + notes100 + notes50 + notes20 + notes10 + coins10 + coins5 + coins2 + coins1;
+    
+        document.getElementById('totalNotes').innerText = `Total Notes: ${totalNotes}`;
+    }
     </script>
 </body>
 </html>
